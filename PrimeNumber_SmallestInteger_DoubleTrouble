@@ -1,0 +1,39 @@
+// #1
+function isPrime(num) {
+  if(num <= 1) return false
+  if(num == 2) return true
+
+  const sqrt = Math.sqrt(num)
+  
+  for (let i = 2; i <= sqrt; i++) {
+    if (num % i == 0) {
+      return false
+    }
+  }
+  return true
+}
+
+// #2
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return args.reduce((acc, item, index) => {
+      return acc < item ? acc : acc = item
+    })
+  }
+}
+
+// #3
+function trouble(arr, goal){
+  const myAr = [...arr]
+  
+  for (let i = 0; i < myAr.length; i++) {
+    for (let j = i+1; j < i+2; j++) {
+      if (myAr[i] + myAr[j] == goal) {
+        myAr.splice(j, 1)
+        j--
+      }
+    }
+  }
+  
+  return myAr
+}
